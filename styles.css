@@ -19,7 +19,7 @@
 }
 .word-lookup input, .word-lookup button{
   max-width: 40%;
-  margin: 0 auto 1rem auto;
+  margin: 1rem auto 1rem auto;
   padding: 10px;
   border: 1px solid lightgrey;
   
@@ -45,9 +45,16 @@
 .word-display ul{
   text-decoration: none;
   list-style: numbers;
-  padding: 2rem;
 }
 .word-display li{
   padding: 1rem;
-  text-align: left;
+}
+body{
+  background-color: rgb(154, 77, 77);
+}
+.wrapper{
+  background-color: rgb(250, 151, 151);
+  max-width: 60%;
+  margin: auto;
+  border-radius: 10px;
 }
