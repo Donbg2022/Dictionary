@@ -1,0 +1,53 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.head{
+  text-align: center;
+  font-size: xxx-large;
+  font-weight: 500;
+  padding: 2rem;
+}
+#border{
+  border-bottom: 2px solid lightgray;
+  max-width: 60%;
+  margin: 2rem auto 0 auto
+}
+.word-lookup{
+ text-align: center;
+}
+.word-lookup input, .word-lookup button{
+  max-width: 40%;
+  margin: 0 auto 1rem auto;
+  padding: 10px;
+  border: 1px solid lightgrey;
+  
+}
+.word-lookup button{
+  background-color: white;
+}
+.word-lookup button:active{
+  background-color: rgb(245, 226, 245);
+}
+
+
+.word-display{
+  text-align: center;
+  max-width: 50%;
+  margin: 0 auto 0 auto;
+}
+#searched-word{
+  font-size: x-large;
+  padding: 2rem;
+  margin-left: -8.5rem;
+}
+.word-display ul{
+  text-decoration: none;
+  list-style: numbers;
+  padding: 2rem;
+}
+.word-display li{
+  padding: 1rem;
+  text-align: left;
+}
