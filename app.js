@@ -7,12 +7,15 @@ let word = ''
 let wordUrl = ``
 
 
+
 search.addEventListener('click', wordSearch)
 
 // async function used in a click event listener do add definitions to page
 async function wordSearch(){
   //try block to ensure code is dealt with correctly if it fails 
 try {
+  //reinitiates the ul to an empty list to avoid list items piling up upon new searches
+  defList.innerHTML = '<li></li>'
   //updates word variable so it can be used by axios get on event click
   word = input.value
   //await get request for specidic word user searches
@@ -33,6 +36,8 @@ catch (err){
   
 }
   }
-  // [0].meanings[0].definitions
 
 
+  function newLi(){
+    defList.innerHTML = '<li></li>'
+  }
