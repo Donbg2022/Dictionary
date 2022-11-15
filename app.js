@@ -19,11 +19,12 @@ try {
   const search = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
   //gets the nested definition from api
   let wordMeaning = search.data[0].meanings
+  console.log(search.data)
   //loops through the variety of options from api to display them all
   for (let i = 0; i < wordMeaning.length; i++) {
   //looping through and creating a list item for each of the definitions
     let dynamicList = defList.appendChild(document.createElement('li'))
-    return dynamicList.innerText = wordMeaning[i].definitions[0].definition
+    dynamicList.innerText = `${i + 1}. ${wordMeaning[i].definitions[0].definition}`
   } }
 catch (err){
   console.log(err)
