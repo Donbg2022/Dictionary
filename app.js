@@ -1,6 +1,7 @@
 //create DOM variables
 const input = document.querySelector('#input');
 const search = document.querySelector('#search')
+const defList = document.querySelector('#list')
 let word = ''
 let wordUrl = ``
 
@@ -16,10 +17,11 @@ async function wordSearch(){
   let wordMeaning = search.data[0].meanings
   //loops through the variety of options from api to display them all
   for (let i = 0; i < wordMeaning.length; i++) {
-    console.log(wordMeaning[i].definitions[0].definition);
-    
+  //looping through and creating a list item for each of the definitions
+    let dynamicList = defList.appendChild(document.createElement('li'))
+    return dynamicList.innerText = wordMeaning[i].definitions[0].definition
   }  
-  console.log(search.data)
+
   }
   // [0].meanings[0].definitions
 
