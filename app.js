@@ -11,43 +11,47 @@ let wordUrl = ``
 
 
 search.addEventListener('click', wordSearch)
+window.addEventListener('keypress', (e) => e.key === 'Enter'? wordSearch(): null)
+
+
 
 // async function used in a click event listener do add definitions to page
 async function wordSearch(){
   //try block to ensure code is dealt with correctly if it fails 
-try {
+  try {
 
   //reinitiates the ul to an empty list to avoid list items piling up upon new searches
-  defList.innerHTML = '<li></li>'
+    defList.innerHTML = '<li></li>'
 
   //updates word variable so it can be used by axios get on event click
-  word = input.value
+    word = input.value
 
   //await get request for specidic word user searches
-  const search = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    const search = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
   
+
   //gets the nested definition from api
-  let wordMeaning = search.data[0].meanings
-  console.log(search.data)
+    let wordMeaning = search.data[0].meanings
+
 
   //loops through the variety of options from api to display them all
-  for (let i = 0; i < wordMeaning.length; i++) {
+    for (let i = 0; i < wordMeaning.length; i++) {
 
   //looping through and creating a list item for each of the definitions
-    let dynamicList = defList.appendChild(document.createElement('li'))
-    dynamicList.innerText = `${i + 1}. ${wordMeaning[i].definitions[0].definition}`
+      let dynamicList = defList.appendChild(document.createElement('li'))
+      dynamicList.innerText = `${i + 1}. ${wordMeaning[i].definitions[0].definition}`
   
   //add a word Header with user input   
   //use api obj word insted of input.value to ensure word is valid before updating header
-  let userWord = search.data[0].word
-  let dynamicWord = searchedWord.innerText = userWord
+    let userWord = search.data[0].word
+    let dynamicWord = searchedWord.innerText = userWord
 
 
   //phonetics
-  let pronounce = search.data[0].phonetic
-  let dynamicPronounce = phonetic.innerText = pronounce
-  
-} }
+    let pronounce = search.data[0].phonetic
+    let dynamicPronounce = phonetic.innerText = pronounce
+  }
+}
 
 catch (err){
   console.log(err)
@@ -58,6 +62,4 @@ catch (err){
   }
 
 
-  function newLi(){
-    defList.innerHTML = '<li></li>'
-  }
+
