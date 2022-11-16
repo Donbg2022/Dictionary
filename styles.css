@@ -9,8 +9,12 @@
   font-weight: 500;
   padding: 2rem;
 }
+#header{
+  color: white;
+}
+
 #border{
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid rgb(235, 220, 220);
   max-width: 60%;
   margin: 2rem auto 0 auto
 }
@@ -51,10 +55,10 @@
   
 }
 body{
-  background-color: rgb(154, 77, 77);
+  background-color: rgb(76, 107, 70);
 }
 .wrapper{
-  background-color: rgb(250, 151, 151);
+  background-color: rgb(135, 202, 129);
   max-width: 45em;
   min-width: 20em;
   margin: auto;

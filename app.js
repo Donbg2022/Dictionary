@@ -28,7 +28,8 @@ async function wordSearch(){
 
   //await get request for specidic word user searches
     const search = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-  
+
+  console.log(search.data)
 
   //gets the nested definition from api
     let wordMeaning = search.data[0].meanings
@@ -60,6 +61,8 @@ catch (err){
   
 }
   }
+
+
 
 
 
